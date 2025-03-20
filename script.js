@@ -16,6 +16,18 @@ function sendMessage() {
 
 function processUserInput(input) {
     setTimeout(() => {
+        // Respon otomatis untuk "Hai"
+        if (input === "hai") {
+            addMessage("Hai juga 😊", "bot");
+            return;
+        }
+
+        // Respon otomatis untuk pertanyaan tentang owner
+        if (input.includes("owner")) {
+            addMessage("Saya DiBuat Oleh Developer Saya Yaitu XdpzQ", "bot");
+            return;
+        }
+
         if (!userProfile) {
             if (input.startsWith("daftar ")) {
                 registerUser(input);
